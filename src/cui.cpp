@@ -28,6 +28,7 @@
 #include <cerrno>
 #include <cstdlib>
 #include <algorithm>
+#include <ctime>
 
 #include <ncurses.h>
 #include "nethogs.h"
@@ -267,6 +268,7 @@ void ui_tick() {
 
 void show_trace(Line *lines[], int nproc) {
   std::cout << "\nRefreshing:\n";
+  std::cout << "Timestamp: " << std::time(NULL) << std::endl;
 
   /* print them */
   for (int i = 0; i < nproc; i++) {
